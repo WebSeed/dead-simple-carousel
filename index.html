@@ -33,6 +33,12 @@
 
             }
 
+            .carousel__window {
+                /* Opera 15+, Chrome 25+, IE 10+, Firefox 16+, Safari 6.1+, iOS 7+, Android 4.4+ */
+                background-image:
+                    linear-gradient(to bottom, rgba(255, 0, 0, 1), rgba(127, 0, 0, 1));
+            }
+
             .carousel__text {
                 position: absolute;
                 left: 20px;
@@ -42,17 +48,79 @@
                 color: white;
             }
 
+            .carousel__curtain {
+                position: absolute;
+                height: 100%;
+                width: 60px;
+                z-index: 10;
+            }
+
+            .carousel__curtain--left {
+
+                left: 0;
+
+                /* Safari 4, Chrome 1-9, iOS 3.2-4.3, Android 2.1-3.0 */
+                background-image:
+                    -webkit-gradient(linear, left top, right top, from(rgba(255, 0, 0, 1)), to(rgba(255, 0, 0, 0)));
+
+                /* Safari 5.1, iOS 5.0-6.1, Chrome 10-25, Android 4.0-4.3 */
+                background-image:
+                    -webkit-linear-gradient(left, rgba(255, 0, 0, 1), rgba(255, 0, 0, 0));
+
+                /* Firefox 3.6 - 15 */
+                background-image:
+                    -moz-linear-gradient(left, rgba(255, 0, 0, 1), rgba(255, 0, 0, 0));
+
+                /* Opera 11.1 - 12 */
+                background-image:
+                    -o-linear-gradient(left, rgba(255, 0, 0, 1), rgba(255, 0, 0, 0));
+
+                /* Opera 15+, Chrome 25+, IE 10+, Firefox 16+, Safari 6.1+, iOS 7+, Android 4.4+ */
+                background-image:
+                    linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 0, 0));
+            }
+
+            .carousel__curtain--right {
+                
+                right: 0;
+
+                /* Safari 4, Chrome 1-9, iOS 3.2-4.3, Android 2.1-3.0 */
+                background-image:
+                    -webkit-gradient(linear, right top, left top, from(rgba(255, 0, 0, 1)), to(rgba(255, 0, 0, 0)));
+
+                /* Safari 5.1, iOS 5.0-6.1, Chrome 10-25, Android 4.0-4.3 */
+                background-image:
+                    -webkit-linear-gradient(right, rgba(255, 0, 0, 1), rgba(255, 0, 0, 0));
+
+                /* Firefox 3.6 - 15 */
+                background-image:
+                    -moz-linear-gradient(right, rgba(255, 0, 0, 1), rgba(255, 0, 0, 0));
+
+                /* Opera 11.1 - 12 */
+                background-image:
+                    -o-linear-gradient(right, rgba(255, 0, 0, 1), rgba(255, 0, 0, 0));
+
+                /* Opera 15+, Chrome 25+, IE 10+, Firefox 16+, Safari 6.1+, iOS 7+, Android 4.4+ */
+                background-image:
+                    linear-gradient(to left, rgba(255, 0, 0, 1), rgba(255, 0, 0, 0));
+            }
+
             .carousel__button {
                 position: absolute;
-                z-index: 1;
+                z-index: 11;
                 border: 0;
                 width: 40px;
                 height: 100%;
+                background: none;
 
                 background-repeat: no-repeat;
                 background-position: center;
 
                 cursor: pointer;
+            }
+
+            .carousel__button[disabled] {
+                opacity: 0.3;
             }
 
             .carousel__button--prev {
@@ -72,16 +140,20 @@
             
             <div id="my-carousel" class="dsc carousel">
 
-                <div class="carousel__buttons">
+                <div class="dsc__controls">
+
+                    <div class="carousel__curtain carousel__curtain--left"></div>
+                    <div class="carousel__curtain carousel__curtain--right"></div>
+
                     <button class="carousel__button carousel__button--prev">
-                        <span class="carousel__button-text">Prev</span>
+                        <span class="carousel__button-text">Previous</span>
                     </button>
                     <button class="carousel__button carousel__button--next">
                         <span class="carousel__button-text">Next</span>
                     </button>
                 </div>
 
-                <div class="dsc__window">
+                <div class="dsc__window carousel__window">
                     <div class="dsc__panel">
 
                         <ul class="carousel__list">
@@ -131,6 +203,54 @@
                                 <a href="#eight">
                                     <img class="carousel__image" src="images/yellow-item.png" alt="Yellow Item" />
                                     <span class="carousel__text">Eight</span>
+                                </a>
+                            </li><!--
+                            --><li class="dsc__item carousel__item">
+                                <a href="#one">
+                                    <img class="carousel__image" src="images/blue-item.png" alt="Blue Item" />
+                                    <span class="carousel__text">Nine</span>
+                                </a>
+                            </li><!--
+                            --><li class="dsc__item carousel__item">
+                                <a href="#two">
+                                    <img class="carousel__image" src="images/green-item.png" alt="Green Item" />
+                                    <span class="carousel__text">Ten</span>
+                                </a>
+                            </li><!--
+                            --><li class="dsc__item carousel__item">
+                                <a href="#three">
+                                    <img class="carousel__image" src="images/pink-item.png" alt="Pink Item" />
+                                    <span class="carousel__text">Eleven</span>
+                                </a>
+                            </li><!--
+                            --><li class="dsc__item carousel__item">
+                                <a href="#four">
+                                    <img class="carousel__image" src="images/yellow-item.png" alt="Yellow Item" />
+                                    <span class="carousel__text">Twelve</span>
+                                </a>
+                            </li><!--
+                            --><li class="dsc__item carousel__item">
+                                <a href="#five">
+                                    <img class="carousel__image" src="images/blue-item.png" alt="Blue Item" />
+                                    <span class="carousel__text">Thirteen</span>
+                                </a>
+                            </li><!--
+                            --><li class="dsc__item carousel__item">
+                                <a href="#six">
+                                    <img class="carousel__image" src="images/green-item.png" alt="Green Item" />
+                                    <span class="carousel__text">Fourteen</span>
+                                </a>
+                            </li><!--
+                            --><li class="dsc__item carousel__item">
+                                <a href="#seven">
+                                    <img class="carousel__image" src="images/pink-item.png" alt="Pink Item" />
+                                    <span class="carousel__text">Fifteen</span>
+                                </a>
+                            </li><!--
+                            --><li class="dsc__item carousel__item">
+                                <a href="#eight">
+                                    <img class="carousel__image" src="images/yellow-item.png" alt="Yellow Item" />
+                                    <span class="carousel__text">Sixteen</span>
                                 </a>
                             </li>
                         </ul>
