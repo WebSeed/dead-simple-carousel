@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dead Simple Carousel</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="css/dead-simple-carousel.css" rel="stylesheet" type="text/css" />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: sans-serif;
+            }
+
+            .carousel {
+                background-color: #f0f0f0;
+            }
+
+            .carousel__list {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .carousel__item {
+                position: relative;
+            }
+
+            .carousel__image {
+
+            }
+
+            .carousel__text {
+                position: absolute;
+                left: 20px;
+                top: 20px;
+                z-index: 1;
+
+                color: white;
+            }
+
+            .carousel__button {
+                position: absolute;
+                z-index: 1;
+                border: 0;
+                width: 40px;
+                height: 100%;
+
+                background-repeat: no-repeat;
+                background-position: center;
+
+                cursor: pointer;
+            }
+
+            .carousel__button--prev {
+                left: 0;
+                background-image: url(images/prev.png);
+            }
+
+            .carousel__button--next {
+                right: 0;
+                background-image: url(images/next.png);
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            
+            <div id="my-carousel" class="dsc carousel">
+
+                <div class="carousel__buttons">
+                    <button class="carousel__button carousel__button--prev">
+                        <span class="carousel__button-text">Prev</span>
+                    </button>
+                    <button class="carousel__button carousel__button--next">
+                        <span class="carousel__button-text">Next</span>
+                    </button>
+                </div>
+
+                <div class="dsc__window">
+                    <div class="dsc__panel">
+
+                        <ul class="carousel__list">
+                            <li class="dsc__item carousel__item">
+                                <a href="#one">
+                                    <img class="carousel__image" src="images/blue-item.png" alt="Blue Item" />
+                                    <span class="carousel__text">One</span>
+                                </a>
+                            </li><!--
+                            --><li class="dsc__item carousel__item">
+                                <a href="#two">
+                                    <img class="carousel__image" src="images/green-item.png" alt="Green Item" />
+                                    <span class="carousel__text">Two</span>
+                                </a>
+                            </li><!--
+                            --><li class="dsc__item carousel__item">
+                                <a href="#three">
+                                    <img class="carousel__image" src="images/pink-item.png" alt="Pink Item" />
+                                    <span class="carousel__text">Three</span>
+                                </a>
+                            </li><!--
+                            --><li class="dsc__item carousel__item">
+                                <a href="#four">
+                                    <img class="carousel__image" src="images/yellow-item.png" alt="Yellow Item" />
+                                    <span class="carousel__text">Four</span>
+                                </a>
+                            </li><!--
+                            --><li class="dsc__item carousel__item">
+                                <a href="#five">
+                                    <img class="carousel__image" src="images/blue-item.png" alt="Blue Item" />
+                                    <span class="carousel__text">Five</span>
+                                </a>
+                            </li><!--
+                            --><li class="dsc__item carousel__item">
+                                <a href="#six">
+                                    <img class="carousel__image" src="images/green-item.png" alt="Green Item" />
+                                    <span class="carousel__text">Six</span>
+                                </a>
+                            </li><!--
+                            --><li class="dsc__item carousel__item">
+                                <a href="#seven">
+                                    <img class="carousel__image" src="images/pink-item.png" alt="Pink Item" />
+                                    <span class="carousel__text">Seven</span>
+                                </a>
+                            </li><!--
+                            --><li class="dsc__item carousel__item">
+                                <a href="#eight">
+                                    <img class="carousel__image" src="images/yellow-item.png" alt="Yellow Item" />
+                                    <span class="carousel__text">Eight</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var require = {
+                baseUrl: './js',
+                paths: {
+                    jquery: 'jquery-1.11.1'
+                }
+            };
+        </script>
+        <script src="js/require.js"></script>
+        <script>
+            require(['DeadSimpleCarousel'], function (DSC) {
+
+                var opts = {
+                    classes: {
+                        prevButton: 'carousel__button--prev',
+                        nextButton: 'carousel__button--next'
+                    }
+                };
+
+                var carousel = new DSC('#my-carousel', opts);
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+
+.dsc {
+    position: relative;
+    overflow: hidden;
+}
+
+.dsc__window {
+    display: block;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -ms-scroll-chaining: none;
+    -ms-touch-action: pan-x;
+    touch-action: pan-x;
+
+    margin: 0 auto;
+}
+
+.dsc__panel {
+    display: block;
+}
+
+.dsc__item {
+    display: inline-block;
+}
